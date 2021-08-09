@@ -1,0 +1,23 @@
+<div style="text-align: center;" >
+  <mat-form-field  style="margin-right: 25px;" appearance="fill">
+    <mat-label>RON</mat-label>
+    <mat-select>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" >
+    <mat-label>Choose the currency</mat-label>
+    <mat-select [(value)]="currency2">
+      <mat-option *ngFor="let currency of listOfCurrency" (click)="startConversion()" [value]="currency" >
+        {{currency}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <input matInput [(ngModel)]="value1" (ngModelChange)="changeInput(true)">
+  </mat-form-field>
+  <mat-icon svgIcon="exchange" aria-hidden="false"></mat-icon>
+  <mat-form-field appearance="fill">
+    <input matInput [(ngModel)]="value2" (ngModelChange)="changeInput(false)">
+  </mat-form-field>
+</div>
